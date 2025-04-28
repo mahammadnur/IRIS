@@ -83,3 +83,57 @@ footer_html = """
 </div>
 """
 st.markdown(footer_html, unsafe_allow_html=True)
+
+
+
+
+
+
+#  chat option (can be run ECHO mode (same response as user ) )
+
+
+
+# import streamlit as st
+# from streamlit_chat import message
+# from streamlit.components.v1 import html
+
+# # Initialize session state for chat history
+# st.session_state.setdefault('past', [])
+# st.session_state.setdefault('generated', [])
+
+# # Callback when user submits input
+# def on_input_change():
+#     user_input = st.session_state.user_input
+#     # append user and placeholder bot response
+#     st.session_state.past.append(user_input)
+#     # You can replace the following with real backend call
+#     bot_response = f"Echo: {user_input}"  # placeholder response
+#     st.session_state.generated.append({'type': 'normal', 'data': bot_response})
+#     # clear input
+#     st.session_state.user_input = ''
+
+# # Callback to clear chat history
+# def on_clear():
+#     st.session_state.past.clear()
+#     st.session_state.generated.clear()
+
+# # Page layout
+# st.title("Chat with Streamlit Chat UI")
+
+# # Display chat messages
+# chat_container = st.container()
+# with chat_container:
+#     for i, user_msg in enumerate(st.session_state.past):
+#         # user message bubble
+#         message(user_msg, is_user=True, key=f"user_{i}")
+#         # bot message bubble
+#         bot = st.session_state.generated[i]
+#         message(bot['data'], key=f"bot_{i}", allow_html=bot.get('allow_html', False), is_table=bot.get('is_table', False))
+
+# # Controls: clear and input
+# col1, col2 = st.columns([1, 4])
+# with col1:
+#     st.button("Clear Chat", on_click=on_clear)
+# with col2:
+#     st.text_input("You:", key="user_input", on_change=on_input_change)
+
