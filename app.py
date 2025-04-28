@@ -52,13 +52,15 @@ species_to_url = {
 }
 
 
-# 5) Display text + image  ---------------------------------------------------
-st.title(f"Predicted Species: **{predictted_species}**")
-# Load image from URL and display
-response = requests.get(species_to_url[predictted_species])
-img = Image.open(BytesIO(response.content))
-st.image(img, caption=predictted_species,width= 150, use_column_width=False)
-
+# # 5) Display text + image  ---------------------------------------------------
+# st.title(f"Predicted Species: **{predictted_species}**")
+# # Load image from URL and display
+# response = requests.get(species_to_url[predictted_species])
+# img = Image.open(BytesIO(response.content))
+# st.image(img, caption=predictted_species,width= 150, use_column_width=False)
+st.write(f"**Predicted Species:** {species}")
+# Direct URL loading; Streamlit handles fetch errors
+st.image(species_to_url[species], caption=species, width=300)
 
 
 # st.write(f"Predicted Species: {predictted_species}")
