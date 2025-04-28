@@ -40,7 +40,7 @@ input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
 # prediction
 
 prediction = model.predict(input_data)
-predictted_species = target_names[prediction[0]]
+species = target_names[prediction[0]]
 
 
 
@@ -58,15 +58,11 @@ species_to_url = {
 # response = requests.get(species_to_url[predictted_species])
 # img = Image.open(BytesIO(response.content))
 # st.image(img, caption=predictted_species,width= 150, use_column_width=False)
-st.write(f"**Predicted Species:** {species}")
+st.title(f"**Predicted Species:** {species}")
 # Direct URL loading; Streamlit handles fetch errors
-st.image(species_to_url[species], caption=species, width=300)
-
-
+st.image(species_to_url[species], caption=species, width=550)
 # st.write(f"Predicted Species: {predictted_species}")
-
 #Trying to adding footer to the app
-
 import streamlit as st
 
 footer_html = """
